@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
+import AboutImage from '../assets/AboutImage.png'
 
 function About() {
   return (
@@ -12,7 +13,7 @@ function About() {
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-6">
-              <img className="img-fluid" src="#" />
+              <img className="img-fluid" src={AboutImage} />
             </div>
             <div className="col-12 col-md-6 my-auto">
               <div className="container">

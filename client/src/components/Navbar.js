@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Logo from "../assets/Logo.png";
 
 function Navbar() {
   return (
@@ -53,12 +55,14 @@ function Navbar() {
       </nav>
       <nav className="navbar navbar-expand-md bg-light">
         <div className="container py-3">
-          <a className="border" href="/" style={{display: 'contents'}}>
-            <img
-              src="#"
-              style={{width: '8%'}}
-            />
-          </a>
+          <Link
+            to="/"
+            className="border"
+            style={{ display: "contents" }}
+          >
+            <img src={Logo} style={{ width: "8%" }} />
+          </Link>
+
           <ul className="navbar-nav ml-auto text-left">
             <li className="nav-item">
               <a href="#" className="nav-link text-dark">

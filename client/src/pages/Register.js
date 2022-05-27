@@ -35,7 +35,7 @@ function Register() {
 
     try {
 
-      let apiURL = 'http://localhost:4000/users/create'
+      let apiURL = 'http://localhost:4000/users/create';
 
       await axios.post(apiURL, user)
       navigate('/')

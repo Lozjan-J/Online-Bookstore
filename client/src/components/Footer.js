@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTwitter, faInstagram, faLinkedin, faTelegram } from "@fortawesome/free-brands-svg-icons";
+import { faPhone, faHome, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   return (
@@ -33,23 +34,23 @@ function Footer() {
             <div className="col-md-3">
               <h4 className="mb-4" style={{ color: "#f67549" }}>CONTACT</h4>
               <p>
-                <Icon /> New York, NY 2333, US
+                <Icon icon={faHome}/> New York, NY 2333, US
               </p>
               <p>
-                <Icon /> providers@gmail.com
+                <Icon icon={faEnvelope}/> providers@gmail.com
               </p>
               <p>
-                <Icon /> +92 7162371623
+                <Icon icon={faPhone}/> +92 7162371623
               </p>
               <p>
-                <Icon /> +01 335 633 144
+                <Icon icon={faTelegram}/> +01 335 633 144
               </p>
             </div>
           </div>
 
           <div className="row mt-4 pb-3">
             <div className="col-md-6">
-                <p>Copyright @2022 All rights reserved by: <a style={{textDecoration: 'none'}}><strong className="text-warning">The Providers</strong></a></p>
+                <p>Copyright @2022 All rights reserved by: <a href="#" style={{textDecoration: 'none'}}><strong className="text-warning">The Providers</strong></a></p>
             </div>
             <div className="col-md-5 d-flex justify-content-end">
                 <ul className="list-unstyled">

@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
-import { Navbar as NavbarComponent, Container, Nav } from "react-bootstrap";
+import {
+  Navbar as NavbarComponent,
+  Container,
+  Nav,
+  Offcanvas,
+} from "react-bootstrap";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 function Navbar() {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => setToggle(!toggle);
+
   return (
     <>
       <Container fluid className="bg-dark py-2">
@@ -29,8 +38,10 @@ function Navbar() {
               </Nav>
             </NavbarComponent.Collapse>
           </NavbarComponent>
+
           <div className="text-white d-flex justify-content-end w-50">
             <button
+              onClick={handleToggle}
               className="bg-white rounded-circle"
               style={{ width: "50px", height: "50px", fontSize: "30px" }}
             >
@@ -39,6 +50,16 @@ function Navbar() {
           </div>
         </Container>
       </Container>
+
+      <Offcanvas show={toggle} onHide={handleToggle} placement="end" style={{width: '200px', height: '200px'}}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>USER</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <h6>Account</h6>
+          <h6>Admin</h6>
+        </Offcanvas.Body>
+      </Offcanvas>
 
       <NavbarComponent variant="light" bg="light" expand="sm">
         <Container>

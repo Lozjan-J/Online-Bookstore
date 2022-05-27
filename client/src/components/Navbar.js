@@ -1,97 +1,72 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
+import { Navbar as NavbarComponent, Container, Nav } from "react-bootstrap";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-md bg-dark">
-        <div className="container">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white">
-                HOME
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" className="nav-link text-white">
-                ABOUT US
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/contact" className="nav-link text-white">
-                CONTACT
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/terms" className="nav-link text-white">
-                TERMS
-              </Link>
-            </li>
-          </ul>
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to="/login" className="nav-link text-white">
-                WISH LIST
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link text-white">
-                LOGIN
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link text-white">
-                CHECKOUT
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link text-white">
-                TOTAL: 300$
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <nav className="navbar navbar-expand-md bg-light">
-        <div className="container py-3">
-          <Link
-            to="/"
-            className="border"
-            style={{ display: "contents" }}
-          >
-            <img src={Logo} style={{ width: "8%" }} />
-          </Link>
+      <Container fluid className="bg-dark py-2">
+        <Container className="d-flex align-items-center">
+          <NavbarComponent variant="dark" expand="sm" className="w-50">
+            <NavbarComponent.Toggle />
+            <NavbarComponent.Collapse>
+              <Nav>
+                <Link className="text-white nav-link" to="/">
+                  HOME
+                </Link>
+                <Link className="text-white nav-link" to="/about">
+                  ABOUT
+                </Link>
+                <Link className="text-white nav-link" to="/contact">
+                  CONTACT
+                </Link>
+                <Link className="text-white nav-link" to="/">
+                  TERMS
+                </Link>
+              </Nav>
+            </NavbarComponent.Collapse>
+          </NavbarComponent>
+          <div className="text-white d-flex justify-content-end w-50">
+            <button
+              className="bg-white rounded-circle"
+              style={{ width: "50px", height: "50px", fontSize: "30px" }}
+            >
+              <Icon icon={faUser} />
+            </button>
+          </div>
+        </Container>
+      </Container>
 
-          <ul className="navbar-nav ml-auto text-left">
-            <li className="nav-item">
-              <Link to="" className="nav-link text-dark">
+      <NavbarComponent variant="light" bg="light" expand="sm">
+        <Container>
+          <NavbarComponent.Brand>
+            <Link to="/">
+              <img src={Logo} style={{ width: "100px" }} />
+            </Link>
+          </NavbarComponent.Brand>
+
+          <NavbarComponent.Toggle />
+          <NavbarComponent.Collapse>
+            <Nav className="ms-auto">
+              <Link className="nav-link text-dark" to="/">
                 BOOKS
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="" className="nav-link text-dark">
+              <Link className="nav-link text-dark" to="/">
                 TEXTBOOKS
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="" className="nav-link text-dark">
-                AUDIOBOOKS
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="" className="nav-link text-dark">
+              <Link className="nav-link text-dark" to="/">
                 MAGAZINES
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="" className="nav-link text-dark">
+              <Link className="nav-link text-dark" to="/">
                 KIDS
               </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+            </Nav>
+          </NavbarComponent.Collapse>
+        </Container>
+      </NavbarComponent>
     </>
   );
 }

@@ -54,7 +54,7 @@ function Register() {
         <form onSubmit={handleSubmit}>
           
           <div className="mx-auto text-center d-flex flex-column justify-content-center align-items-center">
-            <pre>{JSON.stringify(user, undefined, 2)}</pre>
+            {/* <pre>{JSON.stringify(user, undefined, 2)}</pre> */}
             <Icon icon={faUser} style={{fontSize: '70px'}} className=""/>
             <h3 className="mb-3 pt-3">REGISTER</h3>
             <div className="form-group w-25 mx-auto py-2">

@@ -44,7 +44,7 @@ function Home() {
         <div className="container">
           <div className="row pt-4">
             <div className="col-md-6 border">
-              <h1 style={{ backgroundColor: "#f67549" }}>NEW BOOKS</h1>
+              <h1 style={{ color: "#f67549" }}>NEW BOOKS</h1>
               <p className="mt-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Phasellus elit erat, efficitur sit amet odio nec, vestibulum

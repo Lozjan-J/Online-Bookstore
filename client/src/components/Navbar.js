@@ -9,46 +9,46 @@ function Navbar() {
         <div className="container">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link text-white" href="/">
+              <Link to="/" className="nav-link text-white">
                 HOME
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="/about">
+              <Link to="/about" className="nav-link text-white">
                 ABOUT US
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="/contact">
+              <Link to="/contact" className="nav-link text-white">
                 CONTACT
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-white">
+              <Link to="/terms" className="nav-link text-white">
                 TERMS
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a href="#" className="nav-link text-white">
+              <Link to="/login" className="nav-link text-white">
                 WISH LIST
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="/login">
+              <Link to="/login" className="nav-link text-white">
                 LOGIN
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-white">
+              <Link to="/login" className="nav-link text-white">
                 CHECKOUT
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-white">
+              <Link to="/login" className="nav-link text-white">
                 TOTAL: 300$
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -65,29 +65,29 @@ function Navbar() {
 
           <ul className="navbar-nav ml-auto text-left">
             <li className="nav-item">
-              <a href="#" className="nav-link text-dark">
+              <Link to="" className="nav-link text-dark">
                 BOOKS
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-dark">
+              <Link to="" className="nav-link text-dark">
                 TEXTBOOKS
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-dark">
+              <Link to="" className="nav-link text-dark">
                 AUDIOBOOKS
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-dark">
+              <Link to="" className="nav-link text-dark">
                 MAGAZINES
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-dark">
+              <Link to="" className="nav-link text-dark">
                 KIDS
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

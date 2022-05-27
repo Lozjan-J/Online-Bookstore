@@ -51,4 +51,4 @@ Router.route('/delete/:id').delete((req, res, next) => {
    })
 })
 
-module.exports = userRoute
+module.exports = Router

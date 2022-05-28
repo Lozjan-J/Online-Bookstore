@@ -11,7 +11,7 @@ function Contact() {
             <div className="col-5 offset-1 text-center my-auto">
                 <Icon icon={faPhone} className="mx-auto" style={{fontSize: '200px'}}/>
             </div>
-            <div className="col-5">
+            <div className="col-sm-5 my-5">
               <div className="container">
                 <h3 className="pb-4">CONTACT US</h3>
                 <div className="form-group">

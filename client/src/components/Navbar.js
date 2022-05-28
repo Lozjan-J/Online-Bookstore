@@ -17,6 +17,8 @@ function Navbar() {
 
   return (
     <>
+
+      {/*----------------------------------FIRST NAVBAR */}
       <Container fluid className="bg-dark py-2">
         <Container className="d-flex align-items-center">
           <NavbarComponent variant="dark" expand="sm" className="w-50">
@@ -51,16 +53,30 @@ function Navbar() {
         </Container>
       </Container>
 
-      <Offcanvas show={toggle} onHide={handleToggle} placement="end" style={{width: '200px', height: '200px'}}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>USER</Offcanvas.Title>
+      {/*----------------------------------PROFILE MENU */}
+      <Offcanvas show={toggle} onHide={handleToggle} placement="end" style={{width: '250px', height: '210px'}}>
+        <Offcanvas.Header closeButton style={{paddingBottom: '0'}}>
+          <Offcanvas.Title className="d-flex">
+
+            <Container className="border rounded-circle d-flex justify-content-center align-items-center bg-dark text-white" style={{width: '60px', height: '50px'}}>
+              <Icon icon={faUser} />
+            </Container>
+            <Container>
+              <p style={{fontSize: '17px'}}>Filan Fisteku</p>
+              <p style={{fontSize: '14px', marginTop: '-18px'}}>username1</p>
+            </Container>
+          
+          </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <h6>Account</h6>
-          <h6>Admin</h6>
+          <div className="border" style={{marginTop: '-15px'}}></div>
+          <h6 className="mt-3">Profile</h6>
+          <h6 className="mt-3">Admin</h6>
+          <h6 className="mt-3">Log Out</h6>
         </Offcanvas.Body>
       </Offcanvas>
 
+      {/*----------------------------------SECOND NAVBAR */}
       <NavbarComponent variant="light" bg="light" expand="sm">
         <Container>
           <NavbarComponent.Brand>

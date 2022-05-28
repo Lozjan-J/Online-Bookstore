@@ -7,6 +7,10 @@ import Login from './pages/Login';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+import Admin from './pages/Admin/Admin'
+import Manage from './pages/Admin/Manage';
+import Notifications from './pages/Admin/Notifications';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -21,6 +25,10 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+
+        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin/manage' element={<Manage />} />
+        <Route path='/admin/notifications' element={<Notifications />} />
       </Routes>
 
       <Footer />

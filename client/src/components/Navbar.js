@@ -70,9 +70,9 @@ function Navbar() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="border" style={{marginTop: '-15px'}}></div>
-          <Link to="/" className="text-dark" style={{textDecoration: 'none'}}><h6 className="mt-3">Profile</h6></Link>
-          <Link to="/" className="text-dark" style={{textDecoration: 'none'}}><h6 className="mt-3">Admin</h6></Link>
-          <Link to="/" className="text-dark" style={{textDecoration: 'none'}}><h6 className="mt-3">Log Out</h6></Link>
+          <Link to="/" onClick={handleToggle} className="text-dark" style={{textDecoration: 'none'}}><h6 className="mt-3">Profile</h6></Link>
+          <Link to="/admin" onClick={handleToggle} className="text-dark" style={{textDecoration: 'none'}}><h6 className="mt-3">Admin</h6></Link>
+          <Link to="/" onClick={handleToggle} className="text-dark" style={{textDecoration: 'none'}}><h6 className="mt-3">Log Out</h6></Link>
         </Offcanvas.Body>
       </Offcanvas>
 

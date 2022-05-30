@@ -9,7 +9,7 @@ function Notifications() {
 
       <Container className="border border-dark rounded bg-dark my-4">
         <Row className="my-4 px-5 text-white">
-          Notifications
+          Notifications!
         </Row>
       </Container>
     </>

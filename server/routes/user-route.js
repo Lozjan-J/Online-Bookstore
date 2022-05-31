@@ -22,10 +22,9 @@ Router.route('/login').post( async (req, res, next) => {
 
     const exists = await UserModel.findOne({ username, password }).lean()
     if (!exists) {
-        return res.json({ error: 'Invalid username/password'})
+        return res.json();
     }
-    console.log('success')
-    res.json('Successfully login');
+    res.json(exists);
 })
 
 //READ ALL

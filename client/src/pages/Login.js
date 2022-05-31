@@ -32,7 +32,11 @@ function Login(){
       try {
         var apiURL = 'http://localhost:4000/users/login';
         const response = await axios.post(apiURL, user);
-        console.log(response) 
+        if (!response.data) {
+          setErr('Invalid username/password');
+          return;
+        }
+        console.log(response.data);
       } catch(error){
         setErr(error)
       }

@@ -10,6 +10,8 @@ function Register() {
   let navigate = useNavigate()
 
   const userTemplate = {
+    ['First Name']: '',
+    ['Last Name']: '',
     username: '',
     email: '',
     password: ''
@@ -54,6 +56,26 @@ function Register() {
             {/* <pre>{JSON.stringify(user, undefined, 2)}</pre> */}
             <Icon icon={faUser} style={{fontSize: '70px'}} className=""/>
             <h3 className="mb-3 pt-3">REGISTER</h3>
+            <div className="form-group w-25 mx-auto py-2">
+              <input
+                className="form-control rounded"
+                type="text"
+                placeholder="First Name"
+                name="First Name"
+                value={user['First Name']}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group w-25 mx-auto py-2">
+              <input
+                className="form-control rounded"
+                type="text"
+                placeholder="Last Name"
+                name="Last Name"
+                value={user['Last Name']}
+                onChange={handleChange}
+              />
+            </div>
             <div className="form-group w-25 mx-auto py-2">
               <input
                 className="form-control rounded"

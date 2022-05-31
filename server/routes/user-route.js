@@ -2,9 +2,9 @@ const express = require('express')
 const Router = express.Router()
 const UserModel = require('../models/User')
 
-//CREATE
+//CREATE/REGISTER
 Router.route('/create').post((req, res, next) => {
-    const user = req.body
+    const user = req.body;
 
     UserModel.create(user, (error, data) => {
         if (error) {
@@ -13,6 +13,19 @@ Router.route('/create').post((req, res, next) => {
             res.json(data)
         }
     })
+})
+
+//LOGIN
+Router.route('/login').post( async (req, res, next) => {
+    const user = req.body;
+    const {username, password} = user;
+
+    const exists = await UserModel.findOne({ username, password }).lean()
+    if (!exists) {
+        return res.json({ error: 'Invalid username/password'})
+    }
+    console.log('success')
+    res.json('Successfully login');
 })
 
 //READ ALL

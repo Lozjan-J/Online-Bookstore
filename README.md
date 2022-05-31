@@ -1,6 +1,6 @@
 ----HOW TO CLONE
 
-- Open terminal in this folder and run this command: git clone https://github.com/Lozjan-J/Online-Bookstore
+- Open terminal in an empty folder and run this command: git clone https://github.com/Lozjan-J/Online-Bookstore
 - Go to client directory with a terminal and run the command: npm install
 - Go to server directory with a terminal and run the command: npm install
  

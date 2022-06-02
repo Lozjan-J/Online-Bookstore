@@ -24,7 +24,14 @@ Router.route('/login').post( async (req, res, next) => {
     if (!exists) {
         return res.json();
     }
-    res.json('User exists');
+
+    const Profile = {
+        ['First Name']: exists['First Name'],
+        ['Last Name']: exists['Last Name'],
+        ['username']: exists.username,
+        ['email']: exists.email
+    }
+    res.json(Profile);
 })
 
 //READ ALL
@@ -32,6 +39,7 @@ Router.route('/').get((req, res, next) => {
     UserModel.find((error, result) => {
         if (error) return next(error);
         res.json(result);
+        console.log(result);
     })
 })
 

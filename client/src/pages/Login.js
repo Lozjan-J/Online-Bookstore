@@ -5,7 +5,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import LoginSchema from '../validation/LoginSchema';
 import axios from 'axios';
 
-function Login({setAuth}){
+function Login({setAuth, profile, setProfile}){
     let navigate = useNavigate();
 
     const loginTemplate = {
@@ -38,8 +38,12 @@ function Login({setAuth}){
           setErr('Invalid username/password');
           return;
         }
-        localStorage.setItem('Auth', true)
-        setAuth(true);
+        localStorage.setItem('Auth', true) //sets logged in to true in local storage
+        setAuth(true); //logged in state
+
+        localStorage.setItem('Profile', JSON.stringify(response.data));
+        setProfile(response.data);
+
         navigate('/');
       } catch(error){
         setErr(error)

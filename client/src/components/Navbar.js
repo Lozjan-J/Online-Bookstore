@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import {
@@ -10,7 +10,7 @@ import {
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-function Navbar({auth, setAuth}) {
+function Navbar({auth, setAuth, profile, setProfile}) {
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => setToggle(!toggle);
@@ -19,7 +19,7 @@ function Navbar({auth, setAuth}) {
     handleToggle();
     localStorage.removeItem('Auth');
     setAuth();
-    console.log('logged out');
+    setProfile();
   }
 
   return (
@@ -81,8 +81,8 @@ function Navbar({auth, setAuth}) {
               <Icon icon={faUser} />
             </Container>
             <Container>
-              <p style={{ fontSize: "17px" }}>Filan Fisteku</p>
-              <p style={{ fontSize: "14px", marginTop: "-18px" }}>username1</p>
+              <p style={{ fontSize: "17px" }}>{profile && profile['First Name'] + ' ' + profile['Last Name']}</p>
+              <p style={{ fontSize: "14px", marginTop: "-18px" }}>{profile && profile.username}</p>
             </Container>
           </Offcanvas.Title>
         </Offcanvas.Header>
@@ -105,7 +105,7 @@ function Navbar({auth, setAuth}) {
             <h6 className="mt-3">Admin</h6>
           </Link>
           <Link
-            to="/"
+            to="/login"
             onClick={logout}
             className="text-dark"
             style={{ textDecoration: "none" }}

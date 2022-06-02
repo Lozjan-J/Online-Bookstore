@@ -6,12 +6,12 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import UserSchema from '../validation/UserSchema'
 import axios from "axios";
 
-function Register() {
+function Register({setAuth, setProfile}) {
   let navigate = useNavigate()
 
   const userTemplate = {
-    ['First Name']: '',
-    ['Last Name']: '',
+    'First Name': '',
+    'Last Name': '',
     username: '',
     email: '',
     password: ''
@@ -37,7 +37,12 @@ function Register() {
 
     try {
       let apiURL = 'http://localhost:4000/users/create';
-      await axios.post(apiURL, user)
+      const response = await axios.post(apiURL, user);
+      localStorage.setItem('Auth', true) //sets logged in to true in local storage
+      setAuth(true); //logged in state
+
+      localStorage.setItem('Profile', JSON.stringify(response.data));
+      setProfile(response.data);
       navigate('/')
     } catch(error) {
       setErr(error);

@@ -34,8 +34,8 @@ function App() {
 
       <Routes>
         <Route path='/' exact element={<Home />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login setAuth={setAuth} profile={profile} setProfile={setProfile}/>} />
+        <Route path='/register' element={<Register setAuth={setAuth} setProfile={setProfile} />} />
+        <Route path='/login' element={<Login setAuth={setAuth} setProfile={setProfile}/>} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/terms' element={<Terms />} />

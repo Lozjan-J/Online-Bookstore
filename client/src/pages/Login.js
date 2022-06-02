@@ -5,7 +5,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import LoginSchema from '../validation/LoginSchema';
 import axios from 'axios';
 
-function Login({setAuth, profile, setProfile}){
+function Login({setAuth, setProfile}){
     let navigate = useNavigate();
 
     const loginTemplate = {

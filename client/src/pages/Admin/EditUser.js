@@ -10,8 +10,8 @@ import UserSchema from '../../validation/UserSchema';
 function EditUser(){
     let navigate = useNavigate();
     const userTemplate = {
-        ['First Name']: '',
-        ['Last Name']: '',
+        'First Name': '',
+        'Last Name': '',
         username: '',
         email: '',
         password: ''
@@ -31,20 +31,22 @@ function EditUser(){
             }
         }
         getUser()
-    }, [])
+    }, [id]) //this is because eslint will warn that ID is an external variable and this useEffect won't run
+    //if the id is changed.
 
     function handleChange(e){
         const {name, value} = e.target;
         const newUser = {...user, [name]: value};
         setUser(newUser);
+        setErr('');
     }
 
     async function handleSubmit(e){
         e.preventDefault();
-        
+
         const userObject = { 
-            ['First Name']: user["First Name"],  //create a new user object without ID because JOI doesn't verify the ID
-            ['Last Name']: user['Last Name'],
+            'First Name': user["First Name"],  //create a new user object without ID because JOI doesn't verify the ID
+            'Last Name': user['Last Name'],
             username: user.username,
             email: user.email,
             password: user.password

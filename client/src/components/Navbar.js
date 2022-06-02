@@ -10,15 +10,8 @@ import {
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-function Navbar() {
-  const [auth, setAuth] = useState();
+function Navbar({auth, setAuth}) {
   const [toggle, setToggle] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('storage', () => {
-      setAuth(localStorage.getItem('Auth'));
-    })
-  }, [])
 
   const handleToggle = () => setToggle(!toggle);
 

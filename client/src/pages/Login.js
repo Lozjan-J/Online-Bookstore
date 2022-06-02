@@ -5,7 +5,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import LoginSchema from '../validation/LoginSchema';
 import axios from 'axios';
 
-function Login(){
+function Login({setAuth}){
     let navigate = useNavigate();
 
     const loginTemplate = {
@@ -39,6 +39,7 @@ function Login(){
           return;
         }
         localStorage.setItem('Auth', true)
+        setAuth(true);
         navigate('/');
       } catch(error){
         setErr(error)

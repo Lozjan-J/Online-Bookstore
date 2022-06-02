@@ -14,16 +14,23 @@ import Notifications from './pages/Admin/Notifications';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [auth, setAuth] = useState();
+
+  useEffect(() => {
+    setAuth(localStorage.getItem('Auth')); //setting the Auth to true or null if the user is logged in
+  }, [])
+  
   return (
     <Router>
-      <Navbar />
+      <Navbar auth={auth} setAuth={setAuth}/>
 
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login setAuth={setAuth}/>} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/terms' element={<Terms />} />

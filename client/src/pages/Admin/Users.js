@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Table } from "react-bootstrap";
 import AdminHeader from "../../components/Admin/Header";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Users() {
   const [users, setUsers] = useState();
@@ -59,7 +59,9 @@ function Users() {
                     <td>{user.username}</td>
                     <td>{user.email}</td>
                     <td className="d-flex justify-content-around">
-                        <button className="btn btn-primary my-1">Edit</button>
+                        <Link to={`/admin/users/edit/${user._id}`}>
+                          <button className="btn btn-primary my-1">Edit</button>
+                        </Link>
                         <button className="btn btn-danger my-1" onClick={() => deleteUser(user._id)}>Delete</button>
                     </td>
                   </tr>

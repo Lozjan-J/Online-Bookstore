@@ -13,6 +13,7 @@ import Manage from './pages/Admin/Manage';
 import Notifications from './pages/Admin/Notifications';
 
 import Users from './pages/Admin/Users';
+import EditUser from './pages/Admin/EditUser';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -44,6 +45,7 @@ function App() {
         <Route path='/admin/notifications' element={<Notifications />} />
 
         <Route path='/admin/users' element={<Users />} />
+        <Route path='/admin/users/edit/:id' element={<EditUser />} />
       </Routes>
 
       <Footer />

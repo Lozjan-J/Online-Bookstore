@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import {
@@ -14,7 +14,20 @@ function Navbar() {
   const [auth, setAuth] = useState();
   const [toggle, setToggle] = useState(false);
 
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setAuth(localStorage.getItem('Auth'));
+    })
+  }, [])
+
   const handleToggle = () => setToggle(!toggle);
+
+  function logout(){
+    handleToggle();
+    localStorage.removeItem('Auth');
+    setAuth();
+    console.log('logged out');
+  }
 
   return (
     <>
@@ -34,7 +47,7 @@ function Navbar() {
                 <Link className="text-white nav-link" to="/contact">
                   CONTACT
                 </Link>
-                <Link className="text-white nav-link" to="/">
+                <Link className="text-white nav-link" to="/terms">
                   TERMS
                 </Link>
               </Nav>
@@ -100,7 +113,7 @@ function Navbar() {
           </Link>
           <Link
             to="/"
-            onClick={handleToggle}
+            onClick={logout}
             className="text-dark"
             style={{ textDecoration: "none" }}
           >

@@ -5,6 +5,17 @@ import Book1 from "../assets/Book1.jpg";
 import Card from "../components/Card";
 
 function Home() {
+
+  var currentPage = 1
+
+  function Next(){
+    currentPage = 2
+  }
+
+  function Back(){
+    currentPage = 1
+  }
+
   return (
     <>
       <div
@@ -54,20 +65,28 @@ function Home() {
               </p>
             </div>
             <div className="col-md-6 d-flex justify-content-end">
-              <a href="#" className="my-auto"><Icon icon={faPlay} className="text-white p-2" style={{transform: 'rotate(180deg)', backgroundColor: '#f67549'}}></Icon></a>
+              <a href="#" className="my-auto" onClick={Next}><Icon icon={faPlay} className="text-white p-2" style={{transform: 'rotate(180deg)', backgroundColor: '#f67549'}}></Icon></a>
               <a href="#" className="my-auto mx-2"><Icon icon={faPlay} className="text-white p-2" style={{backgroundColor: '#f67549'}}/></a>        
             </div>
           </div>
         </div>
       </div>
 
+
       <div className="container bg-white mt-3 mb-3">
-        <div className="row justify-content-around">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
+        {
+          currentPage == 1 && 
+            <div className="row justify-content-around">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
+        }
+        
+        { currentPage == 2 && 
+          <div>asd</div>
+        }
       </div>
     </>
   );

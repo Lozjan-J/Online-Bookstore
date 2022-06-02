@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
-import { Link } from "react-router-dom";
+import React, {useState} from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import LoginSchema from '../validation/LoginSchema';
 import axios from 'axios';
 
 function Login(){
+    let navigate = useNavigate();
+
     const loginTemplate = {
       username: '',
       password: ''
@@ -36,7 +38,8 @@ function Login(){
           setErr('Invalid username/password');
           return;
         }
-        console.log(response.data);
+        localStorage.setItem('Auth', true)
+        navigate('/');
       } catch(error){
         setErr(error)
       }

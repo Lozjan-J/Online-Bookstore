@@ -24,7 +24,7 @@ Router.route('/login').post( async (req, res, next) => {
     if (!exists) {
         return res.json();
     }
-    res.json(exists);
+    res.json('User exists');
 })
 
 //READ ALL

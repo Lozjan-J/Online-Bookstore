@@ -15,6 +15,7 @@ import Notifications from './pages/Admin/Notifications';
 import Users from './pages/Admin/Users';
 import EditUser from './pages/Admin/EditUser';
 
+import Books from './pages/Admin/Books';
 import CreateBook from './pages/Admin/CreateBook';
 
 import Navbar from './components/Navbar';
@@ -49,6 +50,7 @@ function App() {
         <Route path='/admin/users' element={<Users />} />
         <Route path='/admin/users/edit/:id' element={<EditUser />} />
 
+        <Route path='/admin/books' element={<Books />} />
         <Route path='/admin/books/create' element={<CreateBook />} />
       </Routes>
 

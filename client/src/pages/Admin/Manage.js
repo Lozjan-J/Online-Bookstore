@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
+import React from "react";
 import AdminHeader from "../../components/Admin/Header";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faUser } from "@fortawesome/free-solid-svg-icons";
 
 function Manage() {
   const cardSize = {
@@ -26,6 +26,19 @@ function Manage() {
                     <Icon icon={faUser} />
                   </Card.Title>
                   <Card.Text>Users</Card.Text>
+                </Card.Body>
+              </Link>
+            </Card>
+          </Col>
+
+          <Col className="col-6 col-sm-4 col-md-3 text-center">
+            <Card className="mx-auto my-3 bg-light" style={cardSize}>
+              <Link to="/admin/books" className="nav-link text-dark">
+                <Card.Body>
+                  <Card.Title>
+                    <Icon icon={faBook} />
+                  </Card.Title>
+                  <Card.Text>Books</Card.Text>
                 </Card.Body>
               </Link>
             </Card>

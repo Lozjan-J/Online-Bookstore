@@ -3,6 +3,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import BookSchema from '../../validation/BookSchema';
 
 function CreateBook(){
     let navigate = useNavigate();
@@ -17,12 +18,13 @@ function CreateBook(){
     const [err, setErr] = useState();
 
     function handleChange(e){
-        if (e.target.name == "Image") { //if the file input triggered this function
+        if (e.target.name === "Image") { //if the file input triggered this function
             setBook({...book, 'Image': e.target.files[0]});
         } else {
             const {name, value} = e.target;
             setBook({...book, [name]: value});
         }
+        setErr();
     }
 
     async function handleSubmit(e){
@@ -30,6 +32,12 @@ function CreateBook(){
 
         var apiURL = 'http://localhost:4000/books/create';
         try {
+            const validationResult = BookSchema.validate(book);
+            if (validationResult.error){
+              setErr(validationResult.error.message);
+              return
+            }
+
             const fd = new FormData();
 
             //next we need to append every value for example:
@@ -64,6 +72,8 @@ function CreateBook(){
                 type="text"
                 placeholder="Name"
                 name="Name"
+                value={book.Name}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group w-25 mx-auto py-2">
@@ -72,6 +82,8 @@ function CreateBook(){
                 type="text"
                 placeholder="Author"
                 name="Author"
+                value={book.Author}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group w-25 mx-auto py-2">
@@ -80,6 +92,8 @@ function CreateBook(){
                 type="text"
                 placeholder="Price"
                 name="Price"
+                value={book.Price}
+                onChange={handleChange}
               />
             </div>
 

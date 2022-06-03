@@ -31,7 +31,7 @@ function Home() {
               </div>
             </div>
             <div className="col-7 col-md-3 offset-md-2 mb-4">
-              <img src={Book1} className="img-fluid h-100" />
+              <img src={Book1} alt="Random Book" className="img-fluid h-100" />
             </div>
             <div className="col-3 offset-1 offset-md-0 col-md-1 d-flex justify-content-center align-items-center flex-column">
               <Icon icon={faCircle} className="p-2 opacity-50" />

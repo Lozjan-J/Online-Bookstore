@@ -6,7 +6,7 @@ function Card() {
         <>
         <div className="col-6 col-sm-3 col-md-2 my-2">
             <div className="card">
-              <img className="card-img-top" src={Book1} />
+              <img className="card-img-top" src={Book1} alt="Book"/>
               <div className="card-body">
                 <h5 className="card-title text-center">BookName</h5>
                 <p className="card-text text-center">Price: 300$</p>

@@ -2,6 +2,7 @@ const express = require('express')
 const fileUpload = require('express-fileupload')
 const Router = express.Router()
 const BookModel = require('../models/Book')
+const fs = require('fs')
 
 //CREATE
 Router.route('/create').post(fileUpload(), (req, res, next) => {
@@ -32,7 +33,6 @@ Router.route('/').get((req, res, next) => {
     BookModel.find((error, result) => {
         if (error) return next(error);
         res.json(result);
-        console.log(result);
     })
 })
 
@@ -56,10 +56,19 @@ Router.route('/update/:id').post((req, res, next) => {
 
 //DELETE
 Router.route('/delete/:id').delete((req, res, next) => {
-   BookModel.findByIdAndDelete(req.params.id, (error, result) => {
+
+   BookModel.findByIdAndDelete(req.params.id, (error, data) => {
        if (error) return next(error)
+
+       try {
+        let img = data.Image; //gets the Image which is the imgname stored in database
+        const targetFolder = `.././client/public/uploads/${img}`;
+        fs.unlinkSync(targetFolder);
+       } catch(e){
+           console.log(e);
+       }
        res.status(200).json({
-           msg: result
+           msg: data
        })
    })
 })

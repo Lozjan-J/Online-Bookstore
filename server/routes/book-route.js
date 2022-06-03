@@ -45,9 +45,40 @@ Router.route('/get/:id').get((req, res, next) => {
 })
 
 //UPDATE
-Router.route('/update/:id').post((req, res, next) => {
+Router.route('/update/:id').post(fileUpload(), (req, res, next) => {
+    const book = {
+        Name: req.body.Name,
+        Author: req.body.Author,
+        Price: req.body.Price,
+        Image: req.files.Image.name
+    }
+
+    BookModel.findById(req.params.id, (err, data) => {
+        if (err) {
+            return next(err)
+        } else {
+            try {
+                let img = data.Image;
+                const targetFolder = `.././client/public/uploads/${img}`;
+                fs.unlinkSync(targetFolder);
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    })
+
+    const img = req.files.Image;
+    
+    var destination = `.././client/public/uploads/${img.name}`;
+    img.mv(destination, err => { //creates image
+        if(err) {
+            console.log(err);
+        }
+    });
+    //^^ uploads image
+
     BookModel.findByIdAndUpdate(req.params.id, {
-        $set: req.body
+        $set: book
     }, (error, result) => {
         if (error) return next(error)
         res.json(result)

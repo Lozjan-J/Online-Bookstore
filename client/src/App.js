@@ -17,6 +17,7 @@ import EditUser from './pages/Admin/EditUser';
 
 import Books from './pages/Admin/Books';
 import CreateBook from './pages/Admin/CreateBook';
+import EditBook from './pages/Admin/EditBook';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -52,6 +53,7 @@ function App() {
 
         <Route path='/admin/books' element={<Books />} />
         <Route path='/admin/books/create' element={<CreateBook />} />
+        <Route path='/admin/books/edit/:id' element={<EditBook />} />
       </Routes>
 
       <Footer />

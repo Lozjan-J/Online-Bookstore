@@ -104,7 +104,7 @@ function CreateBook(){
             <button className="form-control btn btn-dark w-25 mt-2">
               CREATE
             </button>
-            <Link to="/admin"
+            <Link to="/admin/books"
               className="text-white mt-2"
               style={{textDecoration: 'none'}}
             >

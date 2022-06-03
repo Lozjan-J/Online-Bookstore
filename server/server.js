@@ -4,10 +4,10 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const database = require('./database')
 
-
 //ROUTES
 const UserRoute = require('./routes/user-route');
 const ContactRoute = require('./routes/contact-route');
+const BookRoute = require('./routes/book-route');
 
 //--------------------------------------------
 mongoose.Promise = global.Promise;
@@ -37,6 +37,7 @@ app.use(bodyParser.urlencoded({
 //--------------------------------------------
 app.use('/users', UserRoute);
 app.use('/contact', ContactRoute);
+app.use('/books', BookRoute);
 
 //--------------------------------------------
 

@@ -55,7 +55,7 @@ function Home() {
               </p>
             </div>
             <div className="col-md-6 d-flex justify-content-end">
-              <a href="#" className="my-auto" onClick={Next}><Icon icon={faPlay} className="text-white p-2" style={{transform: 'rotate(180deg)', backgroundColor: '#f67549'}}></Icon></a>
+              <a href="#" className="my-auto"><Icon icon={faPlay} className="text-white p-2" style={{transform: 'rotate(180deg)', backgroundColor: '#f67549'}}></Icon></a>
               <a href="#" className="my-auto mx-2"><Icon icon={faPlay} className="text-white p-2" style={{backgroundColor: '#f67549'}}/></a>        
             </div>
           </div>

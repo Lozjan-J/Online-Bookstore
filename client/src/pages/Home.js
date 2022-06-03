@@ -6,16 +6,6 @@ import Card from "../components/Card";
 
 function Home() {
 
-  var currentPage = 1
-
-  function Next(){
-    currentPage = 2
-  }
-
-  function Back(){
-    currentPage = 1
-  }
-
   return (
     <>
       <div
@@ -70,23 +60,6 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
-
-
-      <div className="container bg-white mt-3 mb-3">
-        {
-          currentPage == 1 && 
-            <div className="row justify-content-around">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-            </div>
-        }
-        
-        { currentPage == 2 && 
-          <div>asd</div>
-        }
       </div>
     </>
   );

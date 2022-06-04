@@ -46,7 +46,7 @@ function Manage() {
 
           <Col className="col-6 col-sm-4 col-md-3 text-center">
             <Card className="mx-auto my-3 bg-light d-flex justify-content-center align-items-center" style={cardSize}>
-              <Link to="/admin/books" className="nav-link text-dark">
+              <Link to="/admin/contacts" className="nav-link text-dark">
                 <Card.Body>
                   <Card.Title>
                     <Icon icon={faPhone} />

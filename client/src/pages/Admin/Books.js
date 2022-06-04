@@ -62,7 +62,7 @@ function Books() {
                     <td>{index}</td>
                     <td>{book.Name}</td>
                     <td>{book.Author}</td>
-                    <td>{book.Price}</td>
+                    <td>{book.Price + '$'}</td>
                     <td>
                       <img
                       src={require(`../../../public/uploads/${book.Image}`)}

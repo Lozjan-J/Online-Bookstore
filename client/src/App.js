@@ -19,6 +19,8 @@ import Books from './pages/Admin/Books';
 import CreateBook from './pages/Admin/CreateBook';
 import EditBook from './pages/Admin/EditBook';
 
+import Contacts from './pages/Admin/Contacts';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { useState, useEffect } from 'react';
@@ -44,7 +46,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/terms' element={<Terms />} />
 
-        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin' element={<Admin />}/>
         <Route path='/admin/manage' element={<Manage />} />
         <Route path='/admin/notifications' element={<Notifications />} />
 
@@ -54,6 +56,8 @@ function App() {
         <Route path='/admin/books' element={<Books />} />
         <Route path='/admin/books/create' element={<CreateBook />} />
         <Route path='/admin/books/edit/:id' element={<EditBook />} />
+
+        <Route path='/admin/contacts' element={<Contacts />} />
       </Routes>
 
       <Footer />

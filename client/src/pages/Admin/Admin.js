@@ -7,7 +7,7 @@ import { faUser, faShoppingCart, faDollar } from "@fortawesome/free-solid-svg-ic
 function Admin() {
   return (
     <>
-      <AdminHeader />
+      <AdminHeader/>
 
       <Container className="border border-dark rounded bg-dark my-4">
         <Row className="py-5 px-5 text-white">

@@ -14,8 +14,7 @@ function Register({setAuth, setProfile}) {
     'Last Name': '',
     username: '',
     email: '',
-    password: '',
-    role: ''
+    password: ''
   }
   const [user, setUser] = useState(userTemplate);
   const [err, setErr] = useState('');
@@ -38,7 +37,8 @@ function Register({setAuth, setProfile}) {
 
     try {
       let apiURL = 'http://localhost:4000/users/create';
-      const response = await axios.post(apiURL, user);
+      const userObject = {...user, role: 1}
+      const response = await axios.post(apiURL, userObject);
       localStorage.setItem('Auth', true) //sets logged in to true in local storage
       setAuth(true); //logged in state
 

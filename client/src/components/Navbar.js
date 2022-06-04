@@ -96,7 +96,10 @@ function Navbar({auth, setAuth, profile, setProfile}) {
           >
             <h6 className="mt-3">Profile</h6>
           </Link>
-          <Link
+
+          {
+            (profile && (profile.role == 2) && (
+              <Link
             to="/admin"
             onClick={handleToggle}
             className="text-dark"
@@ -104,6 +107,9 @@ function Navbar({auth, setAuth, profile, setProfile}) {
           >
             <h6 className="mt-3">Admin</h6>
           </Link>
+            ))
+          }
+          
           <Link
             to="/login"
             onClick={logout}

@@ -6,6 +6,12 @@ const UserModel = require('../models/User')
 Router.route('/create').post((req, res, next) => {
     const user = req.body;
 
+    const { email } = user;
+    user.role = 1;
+    if (email.includes('ubt-uni.net')) {
+        user.role = 2;
+    }
+
     UserModel.create(user, (error, data) => {
         if (error) {
             return next(error)
@@ -29,7 +35,8 @@ Router.route('/login').post( async (req, res, next) => {
         ['First Name']: exists['First Name'],
         ['Last Name']: exists['Last Name'],
         ['username']: exists.username,
-        ['email']: exists.email
+        ['email']: exists.email,
+        ['role']: exists.role
     }
     res.json(Profile);
 })

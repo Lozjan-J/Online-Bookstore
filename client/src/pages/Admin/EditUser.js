@@ -14,7 +14,8 @@ function EditUser(){
         'Last Name': '',
         username: '',
         email: '',
-        password: ''
+        password: '',
+        role: ''
     }
     const {id} = useParams();
     const [user, setUser] = useState(userTemplate);

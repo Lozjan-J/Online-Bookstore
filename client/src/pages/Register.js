@@ -14,7 +14,8 @@ function Register({setAuth, setProfile}) {
     'Last Name': '',
     username: '',
     email: '',
-    password: ''
+    password: '',
+    role: ''
   }
   const [user, setUser] = useState(userTemplate);
   const [err, setErr] = useState('');

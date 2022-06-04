@@ -1,15 +1,18 @@
 import React from 'react'
-import Book1 from '../assets/Book1.jpg'
 
-function Card() {
+function Card({book}) {
     return (
         <>
         <div className="col-6 col-sm-3 col-md-2 my-2">
-            <div className="card">
-              <img className="card-img-top" src={Book1} alt="Book"/>
+            <div className="card border-0">
+              <img className="card-img-top mx-auto" 
+              src={require(`../../public/uploads/${book.Image}`)} 
+              alt="Book"
+              style={{width: '150px', height: '250px'}}
+              />
               <div className="card-body">
-                <h5 className="card-title text-center">BookName</h5>
-                <p className="card-text text-center">Price: 300$</p>
+                <h5 className="card-title text-center">{book.Name}</h5>
+                <p className="card-text text-center">{book.Price + '$'}</p>
               </div>
             </div>
           </div>

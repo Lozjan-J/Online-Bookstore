@@ -67,7 +67,7 @@ function Books() {
                       <img
                       src={require(`../../../public/uploads/${book.Image}`)}
                       alt={book.Name}
-                      style={{width: '70px', height: '70px'}}
+                      style={{width: '70px', height: '90px'}}
                       />
                     </td>
                     <td className="text-center">

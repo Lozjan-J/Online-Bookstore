@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faSearch, faPlay, faCircle } from "@fortawesome/free-solid-svg-icons";
-import Book1 from "../assets/Book1.jpg";
 import Card from "../components/Card";
+import axios from "axios";
 
 function Home() {
+  const [page, setPage] = useState(1);
+  const [books, setBooks] = useState();
+
+  function Next(){
+    setPage(2);
+  }
+
+  function Back(){
+    setPage(1);
+  }
+
+  useEffect(() => {
+    const getBooks = async () => {
+      try {
+        var apiURL = `http://localhost:4000/books`;
+        const response = await axios.get(apiURL);
+        setBooks(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBooks();
+  }, []);
+
   return (
     <>
       <div
@@ -31,7 +55,11 @@ function Home() {
               </div>
             </div>
             <div className="col-7 col-md-3 offset-md-2 mb-4">
-              <img src={Book1} alt="Random Book" className="img-fluid h-100" />
+              <img
+                src={books && require(`../../public/uploads/${books[0].Image}`)}
+                alt="Random Book"
+                className="img-fluid h-100"
+              />
             </div>
             <div className="col-3 offset-1 offset-md-0 col-md-1 d-flex justify-content-center align-items-center flex-column">
               <Icon icon={faCircle} className="p-2 opacity-50" />
@@ -54,7 +82,7 @@ function Home() {
               </p>
             </div>
             <div className="col-md-6 d-flex justify-content-end">
-              <button className="btn my-auto">
+              <button className="btn my-auto" onClick={Back}>
                 <Icon
                   icon={faPlay}
                   className="text-white p-2"
@@ -62,9 +90,10 @@ function Home() {
                     transform: "rotate(180deg)",
                     backgroundColor: "#f67549",
                   }}
+                  
                 ></Icon>
               </button>
-              <button className="btn my-auto">
+              <button className="btn my-auto" onClick={Next}>
                 <Icon
                   icon={faPlay}
                   className="text-white p-2"
@@ -76,14 +105,28 @@ function Home() {
         </div>
       </div>
 
-      <div className="container bg-white mt-3 mb-3">
-        <div className="row justify-content-around">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+      {books && (
+        <div className="container bg-white mt-3 mb-3">
+          
+          {
+              (page == 1 ? (
+                <div className="row justify-content-around">
+                  <Card book={books[0]} />
+                  <Card book={books[1]} />
+                  <Card book={books[2]} />
+                  <Card book={books[3]} />
+                </div>
+              ) : (
+                <div className="row justify-content-around">
+                  <Card book={books[4]} />
+                  <Card book={books[5]} />
+                  <Card book={books[6]} />
+                  <Card book={books[7]} />
+                </div>
+              ))
+            }
         </div>
-      </div>
+      )}
     </>
   );
 }

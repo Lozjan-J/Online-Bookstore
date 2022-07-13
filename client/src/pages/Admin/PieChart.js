@@ -2,7 +2,7 @@ import React from "react";
 import { Chart } from "chart.js/auto"
 import { Pie } from "react-chartjs-2";
 
-function PieChart() {
+function PieChart({users, books}) {
   return (
     <>
       <Pie 
@@ -11,7 +11,7 @@ function PieChart() {
         datasets: [
             {
                 label: "#",
-                data: [12, 19, 13],
+                data: [users, 1, books],
                 backgroundColor: ['red', 'green', 'yellow']
             }
         ]

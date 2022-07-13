@@ -2,7 +2,7 @@ import React from "react";
 import { Chart } from "chart.js/auto"
 import { Bar } from "react-chartjs-2";
 
-function BarChart() {
+function BarChart({users, books}) {
   return (
     <>
       <Bar 
@@ -11,7 +11,7 @@ function BarChart() {
         datasets: [
             {
                 label: "#",
-                data: [12, 19, 13],
+                data: [users, 1, books],
                 backgroundColor: ['red', 'green', 'yellow']
             }
         ]

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AdminHeader from "../../components/Admin/Header";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,38 @@ import { faUser, faShoppingCart, faDollar } from "@fortawesome/free-solid-svg-ic
 import BarChart from "./BarChart";
 import PieChart from "./PieChart";
 
+import axios from "axios";
+
 function Admin() {
+
+  const [users, setUsers] = useState()
+  const [books, setBooks] = useState()
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        var apiURL = `http://localhost:4000/users`;
+        const response = await axios.get(apiURL);
+        setUsers(response.data.length);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const getBooks = async () => {
+      try {
+        var apiURL = `http://localhost:4000/books`;
+        const response = await axios.get(apiURL);
+        setBooks(response.data.length);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getUsers();
+    getBooks();
+  }, []);
+
   return (
     <>
       <AdminHeader/>
@@ -80,10 +111,10 @@ function Admin() {
 
         <Row className="border bg-dark my-4 mx-5">
             <Col className="col-7 border text-white">
-                <BarChart/>
+                <BarChart users={users} books={books} />
             </Col>
             <Col className="col-5 border text-white">
-                <PieChart/>
+                <PieChart users={users} books={books} />
             </Col>
         </Row>
 

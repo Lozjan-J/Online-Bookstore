@@ -1,11 +1,11 @@
 import React from "react";
 import { Chart } from "chart.js/auto"
-import { Bar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 
-function BarChart() {
+function PieChart() {
   return (
     <>
-      <Bar 
+      <Pie 
       data = {{
         labels: ['Users', 'Sales', 'Books'],
         datasets: [
@@ -23,4 +23,4 @@ function BarChart() {
   );
 }
 
-export default BarChart;
+export default PieChart;

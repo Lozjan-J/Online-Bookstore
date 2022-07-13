@@ -5,6 +5,7 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingCart, faDollar } from "@fortawesome/free-solid-svg-icons";
 
 import BarChart from "./BarChart";
+import PieChart from "./PieChart";
 
 function Admin() {
   return (
@@ -79,10 +80,10 @@ function Admin() {
 
         <Row className="border bg-dark my-4 mx-5">
             <Col className="col-7 border text-white">
-                <BarChart></BarChart>
+                <BarChart/>
             </Col>
             <Col className="col-5 border text-white">
-                Pie Chart
+                <PieChart/>
             </Col>
         </Row>
 

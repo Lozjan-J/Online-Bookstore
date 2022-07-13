@@ -4,6 +4,8 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingCart, faDollar } from "@fortawesome/free-solid-svg-icons";
 
+import BarChart from "./BarChart";
+
 function Admin() {
   return (
     <>
@@ -77,17 +79,11 @@ function Admin() {
 
         <Row className="border bg-dark my-4 mx-5">
             <Col className="col-7 border text-white">
-                Statistics
+                <BarChart></BarChart>
             </Col>
             <Col className="col-5 border text-white">
                 Pie Chart
             </Col>
-        </Row>
-
-        {/* ------------------------RECENT SALES-------------- */}
-
-        <Row className="border bg-dark mt-5 mb-4 mx-5 text-white">
-            Recent Tickets
         </Row>
 
       </Container>

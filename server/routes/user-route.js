@@ -46,7 +46,6 @@ Router.route('/').get((req, res, next) => {
     UserModel.find((error, result) => {
         if (error) return next(error);
         res.json(result);
-        console.log(result);
     })
 })
 

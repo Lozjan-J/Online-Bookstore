@@ -21,8 +21,9 @@ function Navbar({auth, setAuth, profile, setProfile}) {
     setAuth();
     setProfile();
   }
-
-  return (
+  
+  return profile && (
+    
     <>
       {/*----------------------------------FIRST NAVBAR */}
       <Container fluid className="bg-dark py-2">
@@ -86,7 +87,7 @@ function Navbar({auth, setAuth, profile, setProfile}) {
         <Offcanvas.Body>
           <div className="border" style={{ marginTop: "-15px" }}></div>
           <Link
-            to="/"
+            to={`/profile/${profile.id}`}
             onClick={handleToggle}
             className="text-dark"
             style={{ textDecoration: "none" }}

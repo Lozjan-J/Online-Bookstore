@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+import Profile from './pages/Profile';
 import Admin from './pages/Admin/Admin'
 import Manage from './pages/Admin/Manage';
 
@@ -62,6 +63,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
 
+        <Route path='/profile/:id' element={<Profile />} />
         <Route path='/admin' element={<Admin />}/>
         <Route path='/admin/manage' element={<Manage />} />
 

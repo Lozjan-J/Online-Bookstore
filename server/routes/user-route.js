@@ -32,6 +32,7 @@ Router.route('/login').post( async (req, res, next) => {
     }
 
     const Profile = {
+        id: exists._id,
         ['First Name']: exists['First Name'],
         ['Last Name']: exists['Last Name'],
         ['username']: exists.username,

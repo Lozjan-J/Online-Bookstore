@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Table } from "react-bootstrap";
-import AdminHeader from "../../components/Admin/Header";
+import AdminHeader from "../../../components/Admin/Header";
 import { Link } from "react-router-dom";
 
 function Users() {

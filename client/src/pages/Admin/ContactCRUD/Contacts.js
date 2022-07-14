@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AdminHeader from "../../components/Admin/Header";
+import AdminHeader from "../../../components/Admin/Header";
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -58,7 +58,7 @@ function Contacts() {
                     <td>{contact.email}</td>
                     <td>{contact.msg}</td>
                     <td className="text-center">
-                      <Link to={`/admin/contacts/edit/${contact._id}`}>
+                      <Link to={`/admin/contact/edit/${contact._id}`}>
                         <button className="btn btn-primary my-1">Edit</button>
                       </Link>
                       <button

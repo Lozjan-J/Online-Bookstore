@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import AdminHeader from "../../components/Admin/Header";
+import AdminHeader from "../../../components/Admin/Header";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import UserSchema from '../../validation/UserSchema';
+import UserSchema from '../../../validation/UserSchema';
 
 function EditUser(){
     let navigate = useNavigate();

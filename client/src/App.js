@@ -10,8 +10,8 @@ import Contact from './pages/Contact';
 import Admin from './pages/Admin/Admin'
 import Manage from './pages/Admin/Manage';
 
-import Users from './pages/Admin/Users';
-import EditUser from './pages/Admin/EditUser';
+import Users from './pages/Admin/UserCRUD/Users';
+import EditUser from './pages/Admin/UserCRUD/EditUser';
 
 import AdminBooks from './pages/Admin/BookCRUD/Books';
 import CreateBook from './pages/Admin/BookCRUD/CreateBook';
@@ -33,7 +33,8 @@ import Genres from './pages/Admin/GenreCRUD/Genres';
 import CreateGenre from './pages/Admin/GenreCRUD/CreateGenre';
 import EditGenre from './pages/Admin/GenreCRUD/EditGenre';
 
-import Contacts from './pages/Admin/Contacts';
+import Contacts from './pages/Admin/ContactCRUD/Contacts';
+import EditContact from './pages/Admin/ContactCRUD/EditContact';
 
 import Books from './pages/Books';
 
@@ -73,7 +74,8 @@ function App() {
 
         <Route path='/books/:category' element={<Books />} />
 
-        <Route path='/admin/contacts' element={<Contacts />} />
+        <Route path='/admin/contact' element={<Contacts />} />
+        <Route path='/admin/contact/edit/:id' element={<EditContact />} />
 
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/categories/create' element={<CreateCategory />} />

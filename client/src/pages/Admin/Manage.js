@@ -122,6 +122,19 @@ function Manage() {
             </Card>
           </Col>
 
+          <Col className="col-6 col-sm-4 col-md-3 text-center">
+            <Card className="mx-auto my-3 bg-light d-flex justify-content-center align-items-center" style={cardSize}>
+              <Link to="/admin/roles" className="nav-link text-dark">
+                <Card.Body>
+                  <Card.Title>
+                    <Icon icon={faBox} />
+                  </Card.Title>
+                  <Card.Text className="text-start" style={{width: '150%'}}>Roles</Card.Text>
+                </Card.Body>
+              </Link>
+            </Card>
+          </Col>
+
         </Row>
       </Container>
     </>

@@ -38,6 +38,10 @@ import Countries from './pages/Admin/CountryCRUD/Countries';
 import CreateCountry from './pages/Admin/CountryCRUD/CreateCountry';
 import EditCountry from './pages/Admin/CountryCRUD/EditCountry';
 
+import Roles from './pages/Admin/RoleCRUD/Roles';
+import EditRole from './pages/Admin/RoleCRUD/EditRole';
+import CreateRole from './pages/Admin/RoleCRUD/CreateRole';
+
 //-------------------
 
 import Contacts from './pages/Admin/ContactCRUD/Contacts';
@@ -104,6 +108,10 @@ function App() {
         <Route path='/admin/countries' element={<Countries />} />
         <Route path='/admin/countries/create' element={<CreateCountry />} />
         <Route path='/admin/countries/edit/:id' element={<EditCountry />} />
+
+        <Route path='/admin/roles' element={<Roles />} />
+        <Route path='/admin/roles/create' element={<CreateRole />} />
+        <Route path='/admin/roles/edit/:id' element={<EditRole />} />
 
       </Routes>
 

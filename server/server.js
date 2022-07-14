@@ -13,6 +13,7 @@ const AuthorRoute = require('./routes/author-route');
 const LanguageRoute = require('./routes/language-route');
 const GenreRoute = require('./routes/genre-route');
 const CountryRoute = require('./routes/country-route');
+const RoleRoute = require('./routes/role-route');
 
 //--------------------------------------------
 mongoose.Promise = global.Promise;
@@ -48,6 +49,7 @@ app.use('/authors', AuthorRoute);
 app.use('/languages', LanguageRoute);
 app.use('/genres', GenreRoute);
 app.use('/countries', CountryRoute);
+app.use('/roles', RoleRoute);
 
 //--------------------------------------------
 

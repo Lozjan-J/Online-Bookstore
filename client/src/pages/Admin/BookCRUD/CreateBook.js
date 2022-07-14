@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
@@ -10,12 +10,51 @@ function CreateBook(){
     const bookTemplate = {
         Name: '',
         Author: '',
+        Category: '',
+        Language: '',
+        Genre: '',
         Price: '',
         Image: '',
     }
 
     const [book, setBook] = useState(bookTemplate);
+    const [languages, setLanguages] = useState();
+    const [categories, setCategories] = useState();
+    const [genres, setGenres] = useState();
     const [err, setErr] = useState();
+
+    useEffect(() => {
+      const getCategories = async () => {
+          var apiURL = `http://localhost:4000/categories`
+          try {
+              const response = await axios.get(apiURL);
+              setCategories(response.data);
+          } catch(error){
+              console.log(error);
+          }
+      }
+      const getLanguages = async () => {
+          var apiURL = `http://localhost:4000/languages`
+          try {
+              const response = await axios.get(apiURL);
+              setLanguages(response.data);
+          } catch(error){
+              console.log(error);
+          }
+      }
+      const getGenres = async () => {
+        var apiURL = `http://localhost:4000/genres`
+        try {
+            const response = await axios.get(apiURL);
+            setGenres(response.data);
+        } catch(error){
+            console.log(error);
+        }
+    }
+      getLanguages();
+      getCategories();
+      getGenres();
+  }, [])
 
     function handleChange(e){
         if (e.target.name === "Image") { //if the file input triggered this function
@@ -85,6 +124,36 @@ function CreateBook(){
                 value={book.Author}
                 onChange={handleChange}
               />
+            </div>
+            <div className="form-group w-25 mx-auto py-2 text-start">
+            <label>Category</label>
+              <select name="Category" value={book.Category} onChange={handleChange} className="form-group w-100 mx-auto py-2">
+                {categories && categories.map((category) => {
+                  return (
+                    <option value={category.Name} key={category._id}>{category.Name}</option>
+                  )
+                }) }
+              </select>
+            </div>
+            <div className="form-group w-25 mx-auto py-2 text-start">
+            <label>Language</label>
+              <select name="Language" value={book.Language} onChange={handleChange} className="form-group w-100 mx-auto py-2">
+                {languages && languages.map((lang) => {
+                  return (
+                    <option value={lang.Lang} key={lang._id}>{lang.Lang}</option>
+                  )
+                }) }
+              </select>
+            </div>
+            <div className="form-group w-25 mx-auto py-2 text-start">
+            <label>Genre</label>
+              <select name="Genre" value={book.Genre} onChange={handleChange} className="form-group w-100 mx-auto py-2">
+                {genres && genres.map((genre) => {
+                  return (
+                    <option value={genre.Genre} key={genre._id}>{genre.Genre}</option>
+                  )
+                }) }
+              </select>
             </div>
             <div className="form-group w-25 mx-auto py-2">
               <input

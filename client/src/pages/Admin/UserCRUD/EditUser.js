@@ -21,9 +21,19 @@ function EditUser(){
     const {id} = useParams();
     const [user, setUser] = useState(userTemplate);
     const [countries, setCountries] = useState();
+    const [roles, setRoles] = useState();
     const [err, setErr] = useState();
 
     useEffect(() => {
+      const getRoles = async () => {
+        var apiURL = `http://localhost:4000/roles`
+        try {
+            const response = await axios.get(apiURL);
+            setRoles(response.data);
+        } catch(error){
+            console.log(error);
+        }
+    }
         const getUser = async () => {
             var apiURL = `http://localhost:4000/users/get/${id}`
             try {
@@ -33,7 +43,6 @@ function EditUser(){
                 console.log(error);
             }
         }
-        getUser();
         const getCountries = async () => {
           var apiURL = `http://localhost:4000/countries`;
           try {
@@ -44,6 +53,8 @@ function EditUser(){
           }
         };
         getCountries();
+        getUser();
+        getRoles();
     }, [id]) //this is because eslint will warn that ID is an external variable and this useEffect won't run
     //if the id is changed.
 
@@ -71,6 +82,7 @@ function EditUser(){
             return
         }
         try {
+          console.log(user);
             let apiURL = `http://localhost:4000/users/update/${id}`;
             await axios.post(apiURL, user)
             navigate('/admin/users')
@@ -113,12 +125,22 @@ function EditUser(){
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group w-25 mx-auto py-2">
+            <div className="form-group w-25 mx-auto py-2 text-start">
             <label>Country</label>
               <select name="country" value={user.country} onChange={handleChange} className="form-group w-100 mx-auto py-2">
                 {countries && countries.map((country) => {
                   return (
                     <option value={country.Country} key={country._id}>{country.Country}</option>
+                  )
+                }) }
+              </select>
+            </div>
+            <div className="form-group w-25 mx-auto py-2 text-start">
+            <label>Role</label>
+              <select name="role" value={user.role} onChange={handleChange} className="form-group w-100 mx-auto py-2">
+                {roles && roles.map((role) => {
+                  return (
+                    <option value={role.Role} key={role._id}>{role.Role}</option>
                   )
                 }) }
               </select>

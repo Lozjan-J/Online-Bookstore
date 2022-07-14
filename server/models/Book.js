@@ -8,6 +8,15 @@ var bookSchema = new Schema({
     Author: {
         type: String
     },
+    Category: {
+        type: String
+    },
+    Language: {
+        type: String
+    },
+    Genre: {
+        type: String
+    },
     Price: {
         type: String
     },

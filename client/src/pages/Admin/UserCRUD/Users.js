@@ -46,6 +46,7 @@ function Users() {
               <th>Country</th>
               <th>Username</th>
               <th>Email</th>
+              <th>Role</th>
               <th style={{width: '15%'}}>Manage</th>
             </tr>
           </thead>
@@ -60,6 +61,7 @@ function Users() {
                     <td>{user.country}</td>
                     <td>{user.username}</td>
                     <td>{user.email}</td>
+                    <td>{user.role}</td>
                     <td className="d-flex justify-content-around">
                         <Link to={`/admin/users/edit/${user._id}`}>
                           <button className="btn btn-primary my-1">Edit</button>

@@ -35,7 +35,7 @@ function Books() {
       try {
         var apiURL = `http://localhost:4000/books`;
         const response = await axios.get(apiURL);
-        setBooks(response.data);
+        setBooks(response.data.filter((book) => book.Category === category));
       } catch (error) {
         console.log(error);
       }

@@ -6,8 +6,6 @@ const Model = require('../models/Genre')
 Router.route('/create').post((req, res, next) => {
     const object = req.body
 
-    console.log('added')
-
     Model.create(object, (error, data) => {
         if (error) {
             return next(error)

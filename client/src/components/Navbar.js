@@ -130,16 +130,16 @@ function Navbar({auth, setAuth, profile, setProfile}) {
           <NavbarComponent.Toggle />
           <NavbarComponent.Collapse>
             <Nav className="ms-auto">
-              <Link className="nav-link text-dark" to="/books">
+              <Link className="nav-link text-dark" to={`/books/${'Book'}`}>
                 BOOKS
               </Link>
-              <Link className="nav-link text-dark" to="/">
+              <Link className="nav-link text-dark" to={`/books/${'Textbook'}`}>
                 TEXTBOOKS
               </Link>
-              <Link className="nav-link text-dark" to="/">
+              <Link className="nav-link text-dark" to={`/books/${'Magazine'}`}>
                 MAGAZINES
               </Link>
-              <Link className="nav-link text-dark" to="/">
+              <Link className="nav-link text-dark" to={`/books/${'Kids'}`}>
                 KIDS
               </Link>
             </Nav>

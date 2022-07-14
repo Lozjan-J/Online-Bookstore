@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import Card from "../components/Card";
 
@@ -6,6 +7,8 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 
 function Books() {
+  const {category} = useParams();
+
   const [books, setBooks] = useState();
   const [pageNumber, setPageNumber] = useState(0);
 

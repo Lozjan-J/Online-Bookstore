@@ -71,7 +71,7 @@ function App() {
         <Route path='/admin/books/create' element={<CreateBook />} />
         <Route path='/admin/books/edit/:id' element={<EditBook />} />
 
-        <Route path='/books' element={<Books />} />
+        <Route path='/books/:category' element={<Books />} />
 
         <Route path='/admin/contacts' element={<Contacts />} />
 

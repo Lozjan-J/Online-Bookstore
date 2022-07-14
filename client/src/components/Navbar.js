@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import {
@@ -10,8 +10,13 @@ import {
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-function Navbar({auth, setAuth, profile, setProfile}) {
+function Navbar({auth, setAuth}) {
   const [toggle, setToggle] = useState(false);
+  const [profile, setProfile] = useState();
+
+  useEffect(() => {
+    setProfile(JSON.parse(localStorage.getItem('Profile'))); //sets Profile so it loads everytime you reload the page
+  }, [auth]);
 
   const handleToggle = () => setToggle(!toggle);
 
@@ -22,7 +27,7 @@ function Navbar({auth, setAuth, profile, setProfile}) {
     setProfile();
   }
   
-  return profile && (
+  return (
     
     <>
       {/*----------------------------------FIRST NAVBAR */}
@@ -86,7 +91,9 @@ function Navbar({auth, setAuth, profile, setProfile}) {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="border" style={{ marginTop: "-15px" }}></div>
-          <Link
+          
+          {profile && profile.id && (
+            <Link
             to={`/profile/${profile.id}`}
             onClick={handleToggle}
             className="text-dark"
@@ -94,6 +101,7 @@ function Navbar({auth, setAuth, profile, setProfile}) {
           >
             <h6 className="mt-3">Profile</h6>
           </Link>
+          )}
 
           {
             (profile && (profile.role == 2) && (

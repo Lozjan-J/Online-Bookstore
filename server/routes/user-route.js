@@ -36,6 +36,7 @@ Router.route('/login').post( async (req, res, next) => {
         ['First Name']: exists['First Name'],
         ['Last Name']: exists['Last Name'],
         ['username']: exists.username,
+        ['country']: exists.country,
         ['email']: exists.email,
         ['role']: exists.role
     }

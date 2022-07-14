@@ -43,6 +43,7 @@ function Users() {
               <th>#</th>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Country</th>
               <th>Username</th>
               <th>Email</th>
               <th style={{width: '15%'}}>Manage</th>
@@ -56,6 +57,7 @@ function Users() {
                     <td>{index}</td>
                     <td>{user["First Name"]}</td>
                     <td>{user["Last Name"]}</td>
+                    <td>{user.country}</td>
                     <td>{user.username}</td>
                     <td>{user.email}</td>
                     <td className="d-flex justify-content-around">

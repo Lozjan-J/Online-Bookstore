@@ -9,6 +9,7 @@ function Profile() {
   const userTemplate = {
     "First Name": "",
     "Last Name": "",
+    country: "",
     username: "",
     email: "",
     password: "",
@@ -61,6 +62,16 @@ function Profile() {
               placeholder="Last Name"
               name="Last Name"
               value={user && user["Last Name"]}
+            />
+          </div>
+          <div className="form-group w-25 mx-auto py-2">
+            <input
+              disabled
+              className="form-control rounded"
+              type="text"
+              placeholder="Country"
+              name="country"
+              value={user && user.country}
             />
           </div>
           <div className="form-group w-25 mx-auto py-2">

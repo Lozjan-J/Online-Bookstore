@@ -11,6 +11,9 @@ var userSchema = new Schema({
     username: {
         type: String
     },
+    country: {
+        type: String
+    },
     email: {
         type: String
     },

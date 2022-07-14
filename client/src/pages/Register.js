@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -12,12 +12,29 @@ function Register({setAuth, setProfile}) {
   const userTemplate = {
     'First Name': '',
     'Last Name': '',
+    country: '',
     username: '',
     email: '',
     password: ''
   }
+
   const [user, setUser] = useState(userTemplate);
   const [err, setErr] = useState('');
+  const [countries, setCountries] = useState();
+
+  useEffect(() => {
+    const getCountries = async () => {
+      var apiURL = `http://localhost:4000/countries`;
+      try {
+        const response = await axios.get(apiURL);
+        setCountries(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getCountries();
+  }, []); //this is because eslint will warn that ID is an external variable and this useEffect won't run
+  //if the id is changed.
 
   function handleChange(e){
     const {name, value} = e.target;
@@ -81,6 +98,16 @@ function Register({setAuth, setProfile}) {
                 value={user['Last Name']}
                 onChange={handleChange}
               />
+            </div>
+            <div className="form-group w-25 py-2 text-start">
+              <label>Country</label>
+              <select name="country" value={user.country} onChange={handleChange} className="form-group w-100 mx-auto py-2">
+                {countries && countries.map((country) => {
+                  return (
+                    <option value={country.Country} key={country._id}>{country.Country}</option>
+                  )
+                }) }
+              </select>
             </div>
             <div className="form-group w-25 mx-auto py-2">
               <input

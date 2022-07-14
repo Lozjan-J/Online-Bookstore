@@ -12,6 +12,7 @@ function EditUser(){
     const userTemplate = {
         'First Name': '',
         'Last Name': '',
+        country: '',
         username: '',
         email: '',
         password: '',
@@ -19,6 +20,7 @@ function EditUser(){
     }
     const {id} = useParams();
     const [user, setUser] = useState(userTemplate);
+    const [countries, setCountries] = useState();
     const [err, setErr] = useState();
 
     useEffect(() => {
@@ -31,7 +33,17 @@ function EditUser(){
                 console.log(error);
             }
         }
-        getUser()
+        getUser();
+        const getCountries = async () => {
+          var apiURL = `http://localhost:4000/countries`;
+          try {
+            const response = await axios.get(apiURL);
+            setCountries(response.data);
+          } catch (error) {
+            console.log(error);
+          }
+        };
+        getCountries();
     }, [id]) //this is because eslint will warn that ID is an external variable and this useEffect won't run
     //if the id is changed.
 
@@ -48,6 +60,7 @@ function EditUser(){
         const userObject = { 
             'First Name': user["First Name"],  //create a new user object without ID because JOI doesn't verify the ID
             'Last Name': user['Last Name'],
+            country: user.country,
             username: user.username,
             email: user.email,
             password: user.password
@@ -99,6 +112,16 @@ function EditUser(){
                 value={user && user['Last Name']}
                 onChange={handleChange}
               />
+            </div>
+            <div className="form-group w-25 mx-auto py-2">
+            <label>Country</label>
+              <select name="country" value={user.country} onChange={handleChange} className="form-group w-100 mx-auto py-2">
+                {countries && countries.map((country) => {
+                  return (
+                    <option value={country.Country} key={country._id}>{country.Country}</option>
+                  )
+                }) }
+              </select>
             </div>
             <div className="form-group w-25 mx-auto py-2">
               <input

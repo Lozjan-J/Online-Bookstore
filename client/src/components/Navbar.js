@@ -133,7 +133,7 @@ function Navbar({auth, setAuth, profile, setProfile}) {
           <NavbarComponent.Toggle />
           <NavbarComponent.Collapse>
             <Nav className="ms-auto">
-              <Link className="nav-link text-dark" to="/">
+              <Link className="nav-link text-dark" to="/books">
                 BOOKS
               </Link>
               <Link className="nav-link text-dark" to="/">

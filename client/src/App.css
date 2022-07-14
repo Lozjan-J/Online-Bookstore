@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.paginationButtons {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationButtons a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  text-decoration: none;
+  color: black
+}
+
+.paginationButtons a:hover {
+  color: white;
+  background-color: orange;
+}
+
+.activeBtn a {
+  color: white;
+  background-color: orange;
+}

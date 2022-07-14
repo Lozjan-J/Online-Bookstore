@@ -15,11 +15,13 @@ import Notifications from './pages/Admin/Notifications';
 import Users from './pages/Admin/Users';
 import EditUser from './pages/Admin/EditUser';
 
-import Books from './pages/Admin/Books';
+import AdminBooks from './pages/Admin/Books';
 import CreateBook from './pages/Admin/CreateBook';
 import EditBook from './pages/Admin/EditBook';
 
 import Contacts from './pages/Admin/Contacts';
+
+import Books from './pages/Books';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -53,9 +55,11 @@ function App() {
         <Route path='/admin/users' element={<Users />} />
         <Route path='/admin/users/edit/:id' element={<EditUser />} />
 
-        <Route path='/admin/books' element={<Books />} />
+        <Route path='/admin/books' element={<AdminBooks />} />
         <Route path='/admin/books/create' element={<CreateBook />} />
         <Route path='/admin/books/edit/:id' element={<EditBook />} />
+
+        <Route path='/books' element={<Books />} />
 
         <Route path='/admin/contacts' element={<Contacts />} />
       </Routes>

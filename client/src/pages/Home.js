@@ -111,17 +111,33 @@ function Home() {
           {
               (page == 1 ? (
                 <div className="row justify-content-around">
-                  <Card book={books[0]} />
-                  <Card book={books[1]} />
-                  <Card book={books[2]} />
-                  <Card book={books[3]} />
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[0]} />
+                  </div>
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[1]} />
+                  </div>
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[2]} />
+                  </div>
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[3]} />
+                  </div>
                 </div>
               ) : (
                 <div className="row justify-content-around">
-                  <Card book={books[4]} />
-                  <Card book={books[5]} />
-                  <Card book={books[6]} />
-                  <Card book={books[7]} />
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[4]} />
+                  </div>
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[5]} />
+                  </div>
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[6]} />
+                  </div>
+                  <div className="col-6 col-sm-3 col-md-2 my-2">
+                    <Card book={books[7]} />
+                  </div>
                 </div>
               ))
             }

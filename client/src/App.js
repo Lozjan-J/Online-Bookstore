@@ -29,6 +29,10 @@ import Languages from './pages/Admin/LanguageCRUD/Languages';
 import CreateLanguage from './pages/Admin/LanguageCRUD/CreateLanguage';
 import EditLanguage from './pages/Admin/LanguageCRUD/EditLanguage';
 
+import Genres from './pages/Admin/GenreCRUD/Genres';
+import CreateGenre from './pages/Admin/GenreCRUD/CreateGenre';
+import EditGenre from './pages/Admin/GenreCRUD/EditGenre';
+
 import Contacts from './pages/Admin/Contacts';
 
 import Books from './pages/Books';
@@ -82,6 +86,10 @@ function App() {
         <Route path='/admin/languages' element={<Languages />} />
         <Route path='/admin/languages/create' element={<CreateLanguage />} />
         <Route path='/admin/languages/edit/:id' element={<EditLanguage />} />
+
+        <Route path='/admin/genres' element={<Genres />} />
+        <Route path='/admin/genres/create' element={<CreateGenre />} />
+        <Route path='/admin/genres/edit/:id' element={<EditGenre />} />
       </Routes>
 
       <Footer />

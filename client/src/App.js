@@ -14,6 +14,7 @@ import Manage from './pages/Admin/Manage';
 import Users from './pages/Admin/UserCRUD/Users';
 import EditUser from './pages/Admin/UserCRUD/EditUser';
 
+import Book from './pages/Book';
 import AdminBooks from './pages/Admin/BookCRUD/Books';
 import CreateBook from './pages/Admin/BookCRUD/CreateBook';
 import EditBook from './pages/Admin/BookCRUD/EditBook';
@@ -80,6 +81,7 @@ function App() {
         <Route path='/admin/users' element={<Users />} />
         <Route path='/admin/users/edit/:id' element={<EditUser />} />
 
+        <Route path='/book/:id' element={<Book />} />
         <Route path='/admin/books' element={<AdminBooks />} />
         <Route path='/admin/books/create' element={<CreateBook />} />
         <Route path='/admin/books/edit/:id' element={<EditBook />} />

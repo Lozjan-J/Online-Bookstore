@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Card({book}) {
+    let navigate = useNavigate();
+
+    const proceed = () => {
+      navigate(`/book/${book._id}`)
+    }
+
     return (
         <>
-          <div className="card border-0">
+          <div className="card border-0" style={{cursor: 'pointer'}} onClick={proceed}>
             <img className="card-img-top mx-auto" 
             src={require(`../../public/uploads/${book.Image}`)} 
             alt="Book"

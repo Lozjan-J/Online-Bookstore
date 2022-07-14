@@ -17,7 +17,6 @@ function Header(){
                 <ul className='list-unstyled border rounded bg-dark text-light py-3'>
                     <Link to="/admin" className='text-white list-inline-item mx-3' style={{fontSize: '20px', textDecoration: 'none'}}>Dashboard</Link>
                     <Link to="/admin/manage" className='text-white list-inline-item mx-3' style={{fontSize: '20px', textDecoration: 'none'}}>Manage</Link>
-                    <Link to="/admin/notifications" className='text-white list-inline-item mx-3' style={{fontSize: '20px', textDecoration: 'none'}}>Notifications</Link>
                 </ul>
             </div>
         </Container>

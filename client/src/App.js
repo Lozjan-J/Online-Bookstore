@@ -9,7 +9,6 @@ import Contact from './pages/Contact';
 
 import Admin from './pages/Admin/Admin'
 import Manage from './pages/Admin/Manage';
-import Notifications from './pages/Admin/Notifications';
 
 import Users from './pages/Admin/Users';
 import EditUser from './pages/Admin/EditUser';
@@ -48,7 +47,6 @@ function App() {
 
         <Route path='/admin' element={<Admin />}/>
         <Route path='/admin/manage' element={<Manage />} />
-        <Route path='/admin/notifications' element={<Notifications />} />
 
         <Route path='/admin/users' element={<Users />} />
         <Route path='/admin/users/edit/:id' element={<EditUser />} />

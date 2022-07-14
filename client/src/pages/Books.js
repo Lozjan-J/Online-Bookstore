@@ -41,7 +41,7 @@ function Books() {
       }
     };
     getBooks();
-  }, []);
+  }, [category]);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);

@@ -46,8 +46,7 @@ function Categories() {
           <thead>
             <tr>
               <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>Name</th>
               <th style={{ width: "15%" }}>Manage</th>
             </tr>
           </thead>
@@ -57,8 +56,7 @@ function Categories() {
                 return (
                   <tr key={index}>
                     <td>{index}</td>
-                    <td>{author.FirstName}</td>
-                    <td>{author.LastName}</td>
+                    <td>{author.Name}</td>
                     <td className="d-flex justify-content-around">
                       <Link to={`/admin/authors/edit/${author._id}`}>
                         <button className="btn btn-primary my-1">Edit</button>

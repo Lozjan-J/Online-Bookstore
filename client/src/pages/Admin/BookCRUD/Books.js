@@ -49,6 +49,9 @@ function Books() {
               <th>#</th>
               <th>Name</th>
               <th>Author</th>
+              <th>Category</th>
+              <th>Language</th>
+              <th>Genre</th>
               <th>Price</th>
               <th>Image</th>
               <th style={{ width: "15%" }}>Manage</th>
@@ -62,6 +65,9 @@ function Books() {
                     <td>{index}</td>
                     <td>{book.Name}</td>
                     <td>{book.Author}</td>
+                    <td>{book.Category}</td>
+                    <td>{book.Language}</td>
+                    <td>{book.Genre}</td>
                     <td>{book.Price + '$'}</td>
                     <td>
                       <img

@@ -8,8 +8,7 @@ import AuthorSchema from '../../../validation/AuthorSchema';
 function EditUser(){
     let navigate = useNavigate();
     const authorTemplate = {
-        FirstName: '',
-        LastName: ''
+        Name: '',
     }
     const {id} = useParams();
     const [author, setAuthor] = useState(authorTemplate);
@@ -40,8 +39,7 @@ function EditUser(){
         e.preventDefault();
 
         const authorObject = {
-          FirstName: author.FirstName,
-          LastName: author.LastName
+          Name: author.Name,
         }
 
         const validationResult = AuthorSchema.validate(authorObject);
@@ -75,24 +73,12 @@ function EditUser(){
               <input
                 className="form-control rounded"
                 type="text"
-                placeholder="First Name"
-                name="FirstName"
-                value={author && author.FirstName}
+                placeholder="Name"
+                name="Name"
+                value={author && author.Name}
                 onChange={handleChange}
               />
             </div>
-
-            <div className="form-group w-25 mx-auto py-2">
-              <input
-                className="form-control rounded"
-                type="text"
-                placeholder="Last Name"
-                name="LastName"
-                value={author && author.LastName}
-                onChange={handleChange}
-              />
-            </div>
-          
             <button className="form-control btn btn-dark w-25 mt-2">
               UPDATE
             </button>

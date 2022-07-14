@@ -21,9 +21,19 @@ function CreateBook(){
     const [languages, setLanguages] = useState();
     const [categories, setCategories] = useState();
     const [genres, setGenres] = useState();
+    const [authors, setAuthors] = useState();
     const [err, setErr] = useState();
 
     useEffect(() => {
+      const getAuthors = async () => {
+        var apiURL = `http://localhost:4000/authors`
+        try {
+            const response = await axios.get(apiURL);
+            setAuthors(response.data);
+        } catch(error){
+            console.log(error);
+        }
+    }
       const getCategories = async () => {
           var apiURL = `http://localhost:4000/categories`
           try {
@@ -54,6 +64,7 @@ function CreateBook(){
       getLanguages();
       getCategories();
       getGenres();
+      getAuthors();
   }, [])
 
     function handleChange(e){
@@ -115,15 +126,15 @@ function CreateBook(){
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group w-25 mx-auto py-2">
-              <input
-                className="form-control rounded"
-                type="text"
-                placeholder="Author"
-                name="Author"
-                value={book.Author}
-                onChange={handleChange}
-              />
+            <div className="form-group w-25 mx-auto py-2 text-start">
+            <label>Author</label>
+              <select name="Author" value={book.Author} onChange={handleChange} className="form-group w-100 mx-auto py-2">
+                {authors && authors.map((author) => {
+                  return (
+                    <option value={author.Name} key={author._id}>{author.Name}</option>
+                  )
+                }) }
+              </select>
             </div>
             <div className="form-group w-25 mx-auto py-2 text-start">
             <label>Category</label>

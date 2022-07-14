@@ -40,9 +40,6 @@ function Navbar({auth, setAuth, profile, setProfile}) {
                 <Link className="text-white nav-link" to="/contact">
                   CONTACT
                 </Link>
-                <Link className="text-white nav-link" to="/terms">
-                  TERMS
-                </Link>
               </Nav>
             </NavbarComponent.Collapse>
           </NavbarComponent>

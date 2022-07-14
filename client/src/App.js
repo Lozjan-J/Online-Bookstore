@@ -6,7 +6,6 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Terms from './pages/Terms';
 
 import Admin from './pages/Admin/Admin'
 import Manage from './pages/Admin/Manage';
@@ -46,7 +45,6 @@ function App() {
         <Route path='/login' element={<Login setAuth={setAuth} setProfile={setProfile}/>} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/terms' element={<Terms />} />
 
         <Route path='/admin' element={<Admin />}/>
         <Route path='/admin/manage' element={<Manage />} />

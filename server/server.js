@@ -8,6 +8,7 @@ const database = require('./database')
 const UserRoute = require('./routes/user-route');
 const ContactRoute = require('./routes/contact-route');
 const BookRoute = require('./routes/book-route');
+const CategoryRoute = require('./routes/category-route');
 
 //--------------------------------------------
 mongoose.Promise = global.Promise;
@@ -38,6 +39,7 @@ app.use(bodyParser.urlencoded({
 app.use('/users', UserRoute);
 app.use('/contact', ContactRoute);
 app.use('/books', BookRoute);
+app.use('/categories', CategoryRoute);
 
 //--------------------------------------------
 

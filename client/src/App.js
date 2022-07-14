@@ -17,6 +17,10 @@ import AdminBooks from './pages/Admin/Books';
 import CreateBook from './pages/Admin/CreateBook';
 import EditBook from './pages/Admin/EditBook';
 
+import Categories from './pages/Admin/Categories';
+import CreateCategory from './pages/Admin/CreateCategory';
+import EditCategory from './pages/Admin/EditCategory'
+
 import Contacts from './pages/Admin/Contacts';
 
 import Books from './pages/Books';
@@ -58,6 +62,10 @@ function App() {
         <Route path='/books' element={<Books />} />
 
         <Route path='/admin/contacts' element={<Contacts />} />
+
+        <Route path='/admin/categories' element={<Categories />} />
+        <Route path='/admin/categories/create' element={<CreateCategory />} />
+        <Route path='/admin/categories/edit/:id' element={<EditCategory />} />
       </Routes>
 
       <Footer />

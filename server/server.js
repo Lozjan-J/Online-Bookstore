@@ -10,6 +10,7 @@ const ContactRoute = require('./routes/contact-route');
 const BookRoute = require('./routes/book-route');
 const CategoryRoute = require('./routes/category-route');
 const AuthorRoute = require('./routes/author-route');
+const LanguageRoute = require('./routes/language-route');
 
 //--------------------------------------------
 mongoose.Promise = global.Promise;
@@ -42,6 +43,7 @@ app.use('/contact', ContactRoute);
 app.use('/books', BookRoute);
 app.use('/categories', CategoryRoute);
 app.use('/authors', AuthorRoute);
+app.use('/languages', LanguageRoute);
 
 //--------------------------------------------
 

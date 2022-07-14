@@ -25,6 +25,10 @@ import Authors from './pages/Admin/AuthorCRUD/Authors';
 import CreateAuthor from './pages/Admin/AuthorCRUD/CreateAuthor';
 import EditAuthor from './pages/Admin/AuthorCRUD/EditAuthor';
 
+import Languages from './pages/Admin/LanguageCRUD/Languages';
+import CreateLanguage from './pages/Admin/LanguageCRUD/CreateLanguage';
+import EditLanguage from './pages/Admin/LanguageCRUD/EditLanguage';
+
 import Contacts from './pages/Admin/Contacts';
 
 import Books from './pages/Books';
@@ -74,6 +78,10 @@ function App() {
         <Route path='/admin/authors' element={<Authors />} />
         <Route path='/admin/authors/create' element={<CreateAuthor />} />
         <Route path='/admin/authors/edit/:id' element={<EditAuthor />} />
+
+        <Route path='/admin/languages' element={<Languages />} />
+        <Route path='/admin/languages/create' element={<CreateLanguage />} />
+        <Route path='/admin/languages/edit/:id' element={<EditLanguage />} />
       </Routes>
 
       <Footer />

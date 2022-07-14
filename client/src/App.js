@@ -21,6 +21,10 @@ import Categories from './pages/Admin/CategoryCRUD/Categories';
 import CreateCategory from './pages/Admin/CategoryCRUD/CreateCategory';
 import EditCategory from './pages/Admin/CategoryCRUD/EditCategory';
 
+import Authors from './pages/Admin/AuthorCRUD/Authors';
+import CreateAuthor from './pages/Admin/AuthorCRUD/CreateAuthor';
+import EditAuthor from './pages/Admin/AuthorCRUD/EditAuthor';
+
 import Contacts from './pages/Admin/Contacts';
 
 import Books from './pages/Books';
@@ -66,6 +70,10 @@ function App() {
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/categories/create' element={<CreateCategory />} />
         <Route path='/admin/categories/edit/:id' element={<EditCategory />} />
+
+        <Route path='/admin/authors' element={<Authors />} />
+        <Route path='/admin/authors/create' element={<CreateAuthor />} />
+        <Route path='/admin/authors/edit/:id' element={<EditAuthor />} />
       </Routes>
 
       <Footer />

@@ -9,6 +9,7 @@ const UserRoute = require('./routes/user-route');
 const ContactRoute = require('./routes/contact-route');
 const BookRoute = require('./routes/book-route');
 const CategoryRoute = require('./routes/category-route');
+const AuthorRoute = require('./routes/author-route');
 
 //--------------------------------------------
 mongoose.Promise = global.Promise;
@@ -40,6 +41,7 @@ app.use('/users', UserRoute);
 app.use('/contact', ContactRoute);
 app.use('/books', BookRoute);
 app.use('/categories', CategoryRoute);
+app.use('/authors', AuthorRoute);
 
 //--------------------------------------------
 

@@ -13,13 +13,13 @@ import Manage from './pages/Admin/Manage';
 import Users from './pages/Admin/Users';
 import EditUser from './pages/Admin/EditUser';
 
-import AdminBooks from './pages/Admin/Books';
-import CreateBook from './pages/Admin/CreateBook';
-import EditBook from './pages/Admin/EditBook';
+import AdminBooks from './pages/Admin/BookCRUD/Books';
+import CreateBook from './pages/Admin/BookCRUD/CreateBook';
+import EditBook from './pages/Admin/BookCRUD/EditBook';
 
-import Categories from './pages/Admin/Categories';
-import CreateCategory from './pages/Admin/CreateCategory';
-import EditCategory from './pages/Admin/EditCategory'
+import Categories from './pages/Admin/CategoryCRUD/Categories';
+import CreateCategory from './pages/Admin/CategoryCRUD/CreateCategory';
+import EditCategory from './pages/Admin/CategoryCRUD/EditCategory';
 
 import Contacts from './pages/Admin/Contacts';
 

@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from 'react';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import BookSchema from '../../validation/BookSchema';
+import BookSchema from '../../../validation/BookSchema';
 
-function EditBook(){
+function CreateBook(){
     let navigate = useNavigate();
     const bookTemplate = {
         Name: '',
@@ -14,24 +14,10 @@ function EditBook(){
         Image: '',
     }
 
-    const {id} = useParams();
     const [book, setBook] = useState(bookTemplate);
     const [err, setErr] = useState();
 
-    useEffect(() => {
-        const getBook = async () => {
-          try {
-            var apiURL = `http://localhost:4000/books/get/${id}`;
-            const response = await axios.get(apiURL);
-            setBook(response.data);
-          } catch(error) {
-            setErr(error);
-          }
-        }
-        getBook();
-      }, [id])
-
-      function handleChange(e){
+    function handleChange(e){
         if (e.target.name === "Image") { //if the file input triggered this function
             setBook({...book, 'Image': e.target.files[0]});
         } else {
@@ -44,17 +30,9 @@ function EditBook(){
     async function handleSubmit(e){
         e.preventDefault();
 
-        var apiURL = `http://localhost:4000/books/update/${id}`;
+        var apiURL = 'http://localhost:4000/books/create';
         try {
-
-            const bookObject = {
-                Name: book.Name,
-                Author: book.Author,
-                Price: book.Price,
-                Image: book.Image
-            }
-            console.log(book.Image)
-            const validationResult = BookSchema.validate(bookObject);
+            const validationResult = BookSchema.validate(book);
             if (validationResult.error){
               setErr(validationResult.error.message);
               return
@@ -87,7 +65,7 @@ function EditBook(){
           <div className="mx-auto text-center d-flex flex-column justify-content-center align-items-center">
     
             <Icon icon={faBook} style={{fontSize: '70px'}} className=""/>
-            <h3 className="mb-3 pt-3">Edit Book</h3>
+            <h3 className="mb-3 pt-3">Create Book</h3>
             <div className="form-group w-25 mx-auto py-2">
               <input
                 className="form-control rounded"
@@ -124,7 +102,7 @@ function EditBook(){
             </div>
             
             <button className="form-control btn btn-dark w-25 mt-2">
-              UPDATE
+              CREATE
             </button>
             <Link to="/admin/books"
               className="text-white mt-2"
@@ -140,4 +118,4 @@ function EditBook(){
     )
 }
 
-export default EditBook;
+export default CreateBook;

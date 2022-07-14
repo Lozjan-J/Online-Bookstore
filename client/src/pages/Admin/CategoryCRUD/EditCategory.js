@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import AdminHeader from "../../components/Admin/Header";
+import AdminHeader from "../../../components/Admin/Header";
 import { Link } from "react-router-dom";
-import CategorySchema from '../../validation/CategorySchema';
+import CategorySchema from '../../../validation/CategorySchema';
 
 function EditUser(){
     let navigate = useNavigate();

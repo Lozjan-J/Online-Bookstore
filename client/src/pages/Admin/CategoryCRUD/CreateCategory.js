@@ -3,7 +3,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import CategorySchema from '../../validation/CategorySchema';
+import CategorySchema from '../../../validation/CategorySchema';
 
 function CreateCategory(){
     let navigate = useNavigate();

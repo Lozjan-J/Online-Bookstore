@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AdminHeader from "../../components/Admin/Header";
+import AdminHeader from '../../../components/Admin/Header'
 import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -65,7 +65,7 @@ function Books() {
                     <td>{book.Price + '$'}</td>
                     <td>
                       <img
-                      src={require(`../../../public/uploads/${book.Image}`)}
+                      src={require(`../../../../public/uploads/${book.Image}`)}
                       alt={book.Name}
                       style={{width: '70px', height: '90px'}}
                       />

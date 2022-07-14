@@ -34,6 +34,12 @@ import Genres from './pages/Admin/GenreCRUD/Genres';
 import CreateGenre from './pages/Admin/GenreCRUD/CreateGenre';
 import EditGenre from './pages/Admin/GenreCRUD/EditGenre';
 
+import Countries from './pages/Admin/CountryCRUD/Countries';
+import CreateCountry from './pages/Admin/CountryCRUD/CreateCountry';
+import EditCountry from './pages/Admin/CountryCRUD/EditCountry';
+
+//-------------------
+
 import Contacts from './pages/Admin/ContactCRUD/Contacts';
 import EditContact from './pages/Admin/ContactCRUD/EditContact';
 
@@ -94,6 +100,11 @@ function App() {
         <Route path='/admin/genres' element={<Genres />} />
         <Route path='/admin/genres/create' element={<CreateGenre />} />
         <Route path='/admin/genres/edit/:id' element={<EditGenre />} />
+
+        <Route path='/admin/countries' element={<Countries />} />
+        <Route path='/admin/countries/create' element={<CreateCountry />} />
+        <Route path='/admin/countries/edit/:id' element={<EditCountry />} />
+
       </Routes>
 
       <Footer />

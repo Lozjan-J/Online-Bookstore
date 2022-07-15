@@ -104,7 +104,7 @@ function Navbar({auth, setAuth}) {
           )}
 
           {
-            (profile && (profile.role == 2) && (
+            (profile && (profile.role == 1) && (
               <Link
             to="/admin"
             onClick={handleToggle}
